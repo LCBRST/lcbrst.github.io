@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>个人主页</title>
+    <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=3089590353&s=640">
+    <meta name="description" content="“如果可以 就这样 陪你 一直到最后”">
+    <meta name="keywords" content="“如果可以 就这样 陪你 一直到最后”">
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/flaticon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+    <script src="ip.php"></script>
+    <div class="page-wrapper default-version">
+
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+        <div class="page-background">
+            <div class="image-1"><img src="images/icons/shape/icon-1.png" alt=""></div>
+            <div class="image-7"><img src="images/icons/shape/icon-7.png" alt=""></div>
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <style>
+            body {
+                font-family: 'Noto Serif SC', serif;
+                font-weight: 400;
+            }
+
+            .header ul li a {
+                background: #ededed;
+            }
+
+            .header {
+                background: #ededed;
+            }
+
+            .card-home .author h3 {
+                color: #fff;
+            }
+
+            .card-home .author .designation {
+                color: #fff;
+            }
+
+            .card-home .text {
+                color: #fff;
+            }
+
+            .card-outer .card-wrapper {
+                border-radius: 25px;
+            }
+
+            .header {
+                border-radius: 20px;
+            }
+
+            .card-outer .card-inner-box.offsetleft .header {
+                border-radius: 20px;
+            }
+
+            .header ul li.active a {
+                background: #9147ff;
+                color: #fff;
+                border-radius: 20px;
+            }
+
+            .card-resume .title {
+                margin-top: 0px;
+            }
+
+            .card-services .title {
+                margin-top: 0px;
+            }
+
+            .card-projects .title {
+                margin-top: 0px;
+            }
+
+            .card-blog .title {
+                margin-top: 0px;
+            }
+
+            .card-contact .title {
+                margin-top: 0px;
+            }
+
+            .projects-block .image {
+                border-radius: 10px;
+            }
+
+            .contact-form .form-group textarea {
+                border-radius: 10px;
+            }
+
+            .news-block .image:before {
+                border-radius: 10px;
+            }
+
+            .news-block .image img {
+                border-radius: 10px;
+            }
+
+            .news-block .lower-content {
+                border-radius: 0px 0px 10px 10px;
+                padding: 30px;
+                border: 1px solid rgba(208, 206, 206, 0.4);
+                border-top: 0px;
+                box-shadow: 0 3px 12px #ebedf0ad;
+            }
+
+            .home-google-map .google-map {
+                height: 0px;
+            }
+
+            .author-info .author h3 {
+                font-weight: 500;
+                color: #fff;
+            }
+
+            .author-info .author .designation {
+                font-family: 'Poppins', sans-serif;
+                font-size: 15px;
+                margin-bottom: 30px;
+                color: #fff;
+            }
+
+            .social-icon-two li a {
+                color: #ffffff;
+            }
+
+            .btn-style-two {
+                color: #fff;
+            }
+
+            .social-icon-two li a {
+                line-height: 42px;
+                border: 1px solid #dbdbdb;
+            }
+
+            .news-block .date {
+                background-color: #2229;
+            }
+
+            .huise {
+                color: #ccc;
+            }
+
+            .services-block .text {
+                margin-bottom: 10px;
+                height: 3rem;
+            }
+
+            .services-block.col-md-6 {
+                cursor: pointer;
+            }
+
+            .btn-style-one,
+            .btn-style-two {
+                padding: 8px 30px;
+            }
+
+            .default-version .card-outer .card-wrapper {
+                box-shadow: 0 0 13px 2px rgb(156 154 154 / 27%);
+            }
+
+            @media only screen and (max-width: 1199px) {
+                .default-version .card-outer .card-wrapper {
+                    box-shadow: none;
+                }
+            }
+
+            .projects-block .image {
+                border-radius: 15px;
+                box-shadow: 0px 0px 10px 0 rgb(176 169 169 / 29%);
+                margin: 10px;
+            }
+
+            .shadow-blur {
+                position: relative;
+            }
+
+            .shadow-blur::before {
+                content: "";
+                display: block;
+                background: inherit;
+                filter: blur(0.5rem);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 5px;
+                left: 5px;
+                z-index: -1;
+                opacity: 0.4;
+                transform-origin: 0 0;
+                border-radius: inherit;
+                transform: scale(1, 1);
+            }
+
+            .ltps {
+                background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+                border-radius: 1rem;
+                color: #fff;
+                border-radius: 0.5rem;
+                padding: 1.5rem 1rem;
+                font-size: 1.3rem;
+                font-family: 'Noto Serif SC', serif;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            .ltps .hen {
+                width: 4px;
+                height: 20px;
+                background: #fff;
+                display: inline-block;
+                border-radius: 1rem;
+                margin-right: 0.6rem;
+            }
+
+            .keyPoint {
+                background-color: #d2f1f0;
+                color: #1cbbb4;
+                padding: 2px 10px;
+                border-radius: 20px;
+                font-style: normal;
+                font-size: 14px;
+            }
+
+            .keyPoint_t {
+                background-color: #fde6d2;
+                color: #f37b1d;
+                padding: 2px 10px;
+                border-radius: 20px;
+                font-style: normal;
+                font-size: 14px;
+            }
+
+            h4,
+            .header ul li a {
+                font-family: 'Noto Serif SC', serif;
+                font-weight: 400;
+            }
+
+            .btn-style-one {
+                background: #9147ff00;
+                border: 1px solid #ffffff;
+            }
+        </style>
+
+
+        <!-- Mobile menu -->
+        
+
+        <div class="card-outer">
+            <div class="scroll-box">
+                <div class="container" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
+                    <div class="card-wrapper">
+                        <div class="author-info" style="background-image:url(images/background/mgbg2.png);border-radius: 25px;background-size: 145%;">
+                            <div class="image"><img src="https://q1.qlogo.cn/g?b=qq&nk=3089590353&s=640" alt=""></div>
+                            <div class="author">
+                                <h3>LCBRST</h3>
+                                <div class="designation" style="font-family: 'Noto Serif SC', serif;font-weight: 400;">
+                                    LCBRST：
+                                    <div class="typing-title">
+                                        <p> <strong>世人慌慌张张 只图碎银几两</strong></p>
+                                        <p> <strong>恰这碎银几两能解万种惆怅</strong></p>
+                                    </div>
+                                    <span class="typed-title"></span>
+                                </div>
+                            </div>
+                            <div class="link-btn">
+                                <a href="https://wpa.qq.com/msgrd?v=3&uin=3089590353&site=qq&menu=yes" class="theme-btn btn-style-one">联系我</a>
+                            </div>
+                            <ul class="social-icon-two">
+                                <li><a href="#"><span class="fa fa-weibo"></span></a></li>
+                                <li><a href="#"><span class="fa fa-weixin"></span></a></li>
+                                <li><a href="#"><span class="fa fa-qq"></span></a></li>
+                                <li><a href="#"><span class="fa fa-location-arrow"></span></a></li>
+                            </ul>
+                        </div>
+                        <div class="card-inner-box">
+                            <header class="header wow fadeInLeft" data-wow-duration="1.5s">
+                                <ul class="main-menu">
+                                    <li class="active home"><a class="logo" href="#home"><img src="images/logo.png"
+                                                alt=""></a></li>
+                                    <li><a href="#about"><i class="flaticon-social"></i>关于</a></li>
+                                </ul>
+                            </header>
+
+                            <!-- card item -->
+                            <div class="card-home card-item active" id="home" style="background-image:url(images/background/mgbg.jpg);border-radius: 25px;">
+
+                                <div class="card-inner wow fadeInUp" data-wow-duration="2s">
+                                    <div class="image"><img src="https://q1.qlogo.cn/g?b=qq&nk=3089590353&s=640" alt="">
+                                    </div>
+                                    <div class="author">
+                                        <h3>LCBRST</h3>
+                                        <div class="designation" style="font-family: 'Noto Serif SC', serif;font-weight: 400;">
+
+                                            <div class="typing-title">
+                                                <p> <strong>世人慌慌张张 只图碎银几两</strong></p>
+                                                <p> <strong>恰这碎银几两能解万种惆怅</strong></p>
+                                            </div>
+                                            <span class="typed-title"></span>
+                                        </div>
+                                    </div>
+                                    <div class="text">"You are my dream of gain and loss, and I am dispensable to you."
+                                    </div>
+                                    <div class="link-btn">
+                                        <a href="https://wpa.qq.com/msgrd?v=3&uin=3089590353&site=qq&menu=yes" class="theme-btn btn-style-one">联系我</a>
+                                        <a href="#" class="theme-btn btn-style-two">博客主页</a>
+                                    </div>
+                                    <ul class="social-icon-two">
+                                        <li><a href="#"><span class="fa fa-comments"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-qq"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-location-arrow"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-weixin"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-envelope"></span></a></li>
+                                    </ul>
+                                    <br>
+                                    <br><br>
+                                </div>
+
+                            </div>
+                            <!-- end item -->
+
+                            <!-- card item -->
+                            <div class="card-about card-item" id="about" style="background-image:url(images/background/2.jpg)">
+                                <div class="card-inner">
+                                    <h4 class="title">关于 LCBRST</h4>
+
+                                    <div class="ltps shadow-blur">
+                                        <span class="hen"></span>
+                                        <span style="font-size: 1.8rem;width: 4em;">技能：</span>Html|C｜Java｜Python|OPHM
+                                    </div>
+
+                                    <div class="info-list">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <ul class="list-style-one">
+                                                    <li><strong>Name:</strong> <i class="keyPoint">LCBRST</i> </li>
+                                                    <li><strong>Age:</strong> <i class="keyPoint">20</i></li>
+                                                    <li><strong>Gender:</strong> <i class="keyPoint">男</i></li>
+                                                    <li><strong>Address:</strong> <i class="keyPoint">中国 广东</i></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ul class="list-style-one">
+                                                    <li><strong>Email:</strong> <i class="keyPoint_t">3089590353@qq.com</i></li>
+                                                    <li><strong>QQ:</strong> <i class="keyPoint_t">3089590353</i></li>
+                                                    <li><strong>Freelance:</strong> <i class="keyPoint_t">二本</i></li>
+                                                    <li><strong>Character:</strong> <i class="keyPoint_t">#内向 #社恐 #胆小</i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end item -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/owl.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/appear.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/element-in-view.js"></script>
+    <script src="js/knob.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/mousemoveparallax.js"></script>
+    <script src="js/pagenav.js"></script>
+    <script src="js/jquery-type.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/particle-alone.js"></script>
+    <script src="js/script.js"></script>
+
+    <!--Google Map APi Key-->
+    <!--<script src="https://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>-->
+    <script src="js/gmaps.js"></script>
+    <script src="js/map-script.js"></script>
+    <!--End Google Map APi-->
+
+</body>
+
+</html>
