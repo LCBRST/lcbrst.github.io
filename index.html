@@ -356,7 +356,7 @@
                                             <div class="col-md-6">
                                                 <ul class="list-style-one">
                                                     <li><strong>Name:</strong> <i class="keyPoint">LCBRST</i> </li>
-                                                    <li><strong>Age:</strong> <i class="keyPoint">20</i></li>
+                                                    <li><strong>Age:</strong> <i class="keyPoint" id="ageDisplay"> </i></li>
                                                     <li><strong>Gender:</strong> <i class="keyPoint">男</i></li>
                                                     <li><strong>Address:</strong> <i class="keyPoint">中国 广东</i></li>
                                                 </ul>
@@ -401,6 +401,12 @@
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/particle-alone.js"></script>
     <script src="js/script.js"></script>
+    <script>
+            const startYear = 2004;
+            const currentYear = new Date().getFullYear();
+            const age = currentYear - startYear;
+            document.getElementById('ageDisplay').textContent = age;
+    </script>
 
     <!--Google Map APi Key-->
     <!--<script src="https://ditu.google.cn/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>-->
